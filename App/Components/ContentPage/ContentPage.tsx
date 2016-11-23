@@ -1,8 +1,10 @@
 import * as React from "react";
 import ContentHeader from "./ContentHeader/ContentHeader";
 import ContentBody from "./ContentBody/ContentBody";
+import ContentFooter from "./ContentFooter/ContentFooter";
+import Container1 from "./Containers/Container1";
 import CommonStore from "../../Stores/CommonStore";
-import  * as CommonActionCreators from "../../ActionCreators/CommonActionCreators";
+// import  * as CommonActionCreators from "../../ActionCreators/CommonActionCreators";
 import SmartComponent from "./../SmartComponent";
 
 /* tslint:disable:no-any */
@@ -26,11 +28,9 @@ export default class ContentPage extends SmartComponent<{}, IContentPageState> {
         return <div className={styles.container}>
                    <ContentHeader isActive={true} title={headerTitle} />
                    <ContentBody ref="contentBodyRef" title={this.state.bodyTitle} summary={this.state.bodySummary}>
-                       <div className={styles.hello}>
-                           <button className={styles.button} onClick={() => this.onButtonClick()}>Say Hello!</button>
-                           <div className={styles.message}>You said hello {this.state.sayHelloCount} time(s)</div>
-                       </div>
+                       <Container1 isActive={true} />
                    </ContentBody>
+                   <ContentFooter isActive={true} title={headerTitle} />
                </div>;
     }
 
@@ -42,7 +42,4 @@ export default class ContentPage extends SmartComponent<{}, IContentPageState> {
         };
     }
 
-    private onButtonClick(): void {
-        CommonActionCreators.sayHello();
-    }
 }
