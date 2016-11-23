@@ -3,7 +3,7 @@ import AppLoadedAction from "../Actions/AppLoadedAction";
 import SayHelloAction from "../Actions/SayHelloAction";
 
 export function loadApp(): void {
-    const bodyTitle: string = "The standard Lorem Ipsum passage, used since the 1500s";
+    const bodyTitle: string = "Welcome to Glasses for less";
     const bodySummary: string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor" +
         "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco" +
         "laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate" +
