@@ -11,6 +11,7 @@ var mainConfig = new Config().extend("webpack.config");
 var devConfigExtension = {
   entry: {
       app: [
+          "bootstrap-webpack!./bootstrap.config.js",
         // We are using next two entries for hot-reload
         'webpack-dev-server/client?http://localhost:3333',
         'webpack/hot/only-dev-server',
@@ -38,7 +39,8 @@ var devConfigExtension = {
       { test: /\.import\.css$/,  loader: "style!css", include: path.resolve(__dirname, "App") },
       { test: /\.less$/, exclude: /\.module\.less$/, loader: "style!css!less", include: path.resolve(__dirname, "App") },
       { test: /\.module\.less$/, loader: "style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!less", include: path.resolve(__dirname, "App") },
-      { test: /\.(jpg|png|jpg|png|woff|eot|ttf|svg|gif)$/, loader: "file-loader?name=[name].[ext]" }
+      { test: /\.(jpg|png|jpg|png|gif|woff|woff2|eot|ttf|svg)$/, loader: "file-loader?name=[name].[ext]" },
+      { test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery' },
     ]
   },
 
@@ -46,7 +48,11 @@ var devConfigExtension = {
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
     // Used for hot-reload
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.ProvidePlugin({
+           $: "jquery",
+           jQuery: "jquery"
+       })
   ]
 };
 
