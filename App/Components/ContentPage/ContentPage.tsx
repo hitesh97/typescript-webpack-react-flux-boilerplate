@@ -8,7 +8,7 @@ import CommonStore from "../../Stores/CommonStore";
 import SmartComponent from "./../SmartComponent";
 
 /* tslint:disable:no-any */
-const styles: any = require("./ContentPage.module.less");
+// const styles: any = require("./ContentPage.module.less");
 /* tslint:enable:no-any */
 
 interface IContentPageState {
@@ -25,7 +25,7 @@ export default class ContentPage extends SmartComponent<{}, IContentPageState> {
     doRender(): React.ReactElement<{}> {
         const headerTitle: string = "Welcome to Lorem Ipsum";
 
-        return <div className={styles.container}>
+        return <div>
                    <ContentHeader isActive={true} title={headerTitle} />
                    <ContentBody ref="contentBodyRef" title={this.state.bodyTitle} summary={this.state.bodySummary}>
                        <Container1 isActive={true} />

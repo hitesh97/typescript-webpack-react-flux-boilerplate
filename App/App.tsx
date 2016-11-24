@@ -3,8 +3,8 @@ import ContentPage from "./Components/ContentPage/ContentPage";
 import * as CommonActionCreators from "./ActionCreators/CommonActionCreators";
 import BaseComponent from "./Components/BaseComponent";
 require("./Log/ActionLogger");
-require("./Global/Styles/global.less");
 require("bootstrap-webpack!../bootstrap.config.js");
+
 export default class App extends BaseComponent<{}, {}> {
     doRender(): React.ReactElement<{}> {
         return  <div>
