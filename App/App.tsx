@@ -4,6 +4,7 @@ import * as CommonActionCreators from "./ActionCreators/CommonActionCreators";
 import BaseComponent from "./Components/BaseComponent";
 require("./Log/ActionLogger");
 require("bootstrap-webpack!../bootstrap.config.js");
+// require("./Global/Styles/global.less");
 
 export default class App extends BaseComponent<{}, {}> {
     doRender(): React.ReactElement<{}> {
