@@ -2,6 +2,10 @@ import * as React from "react";
 import BaseComponent from "./../../BaseComponent";
 
 /* tslint:disable:no-any */
+ const parisImg: any = require("../../../Images/paris.jpg");
+ const newyorkImg: any = require("../../../Images/newyork.jpg");
+ const sanFranImg: any = require("../../../Images/sanfran.jpg");
+
  const styles: any = require("./ContentBody.module.less");
 /* tslint:enable:no-any */
 
@@ -71,24 +75,24 @@ export default class ContentBody extends BaseComponent<IContentBodyProps, {}> {
                 <div id="portfolio" className="container-fluid text-center bg-grey">
                 <h2>Portfolio</h2><br />
                 <h4>What we have created</h4>
-                <div className="row text-center slideanim">
+                <div className="row text-center">
                     <div className="col-sm-4">
                     <div className="thumbnail">
-                        <img src="paris.jpg" alt="Paris" width="400" height="300" />
+                        <img src={parisImg} alt="Paris" width="400" height="300" />
                         <p><strong>Paris</strong></p>
                         <p>Yes, we built Paris</p>
                     </div>
                     </div>
                     <div className="col-sm-4">
                     <div className="thumbnail">
-                        <img src="newyork.jpg" alt="New York" width="400" height="300" />
+                        <img src={newyorkImg} alt="New York" width="400" height="300" />
                         <p><strong>New York</strong></p>
                         <p>We built New York</p>
                     </div>
                     </div>
                     <div className="col-sm-4">
                     <div className="thumbnail">
-                        <img src="sanfran.jpg" alt="San Francisco" width="400" height="300" />
+                        <img src={sanFranImg} alt="San Francisco" width="400" height="300" />
                         <p><strong>San Francisco</strong></p>
                         <p>Yes, San Fran is ours</p>
                     </div>

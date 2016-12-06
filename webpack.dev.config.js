@@ -38,10 +38,12 @@ var devConfigExtension = {
     loaders: [
       { test: /\.tsx?$/, loaders: ['react-hot', 'babel?presets[]=es2015-loose', 'ts-loader?configFileName=tsconfig.webpack.json'], include: path.resolve(__dirname, "App") },
       { test: /\.css$/, exclude: /\.import\.css$/,  loader: ExtractTextPlugin.extract("style!css"), include: path.resolve(__dirname, "App") },
-      { test: /\.import\.css$/,  loader: "style!css", include: path.resolve(__dirname, "App") },
+      { test: /\.import\.css$/,  loader: ExtractTextPlugin.extract("style!css"), include: path.resolve(__dirname, "App") },
       { test: /\.less$/, exclude: /\.module\.less$/, loader: ExtractTextPlugin.extract("style", "css!less"), include: path.resolve(__dirname, "App") },
       { test: /\.module\.less$/, loader: "style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!less", include: path.resolve(__dirname, "App") },
-      { test: /\.(jpg|png|jpg|png|gif|woff|woff2|eot|ttf|svg)$/, loader: "file-loader?name=[name].[ext]" },
+      //{ test: /\.(jpg|png|jpg|png|gif|woff|woff2|eot|ttf|svg)$/, loader: "file-loader?name=[name].[ext]" },
+       { test: /\.(png|woff|woff2|eot|ttf|svg|gif)$/, loader: "file-loader?name=[name].[ext]" },
+       { test: /\.(jpg)$/, loader: 'url?limit=25000' },
       { test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery' },
     ]
   },

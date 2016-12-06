@@ -22,9 +22,9 @@ var server = new WebpackDevServer(compiler, {
       // add timing information
       timings: true,
       // add assets information
-      assets: false,
+      assets: true,
       // add chunk information
-      chunks: false,
+      chunks: true,
       // add built modules information to chunk information
       chunkModules: false,
       // add built modules information
@@ -34,7 +34,7 @@ var server = new WebpackDevServer(compiler, {
       // add information about the reasons why modules are included
       reasons: false,
       // add the source code of modules
-      source: false,
+      source: true,
       // add details to errors (like resolving log)
       errorDetails: true,
       // add the origins of chunks and chunk merging info
